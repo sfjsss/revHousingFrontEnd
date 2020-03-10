@@ -1,0 +1,16 @@
+<section fxLayout="column" fxLayoutAlign="center center">
+    <h1>Welcome to RevHousing</h1>
+    <mat-form-field class="searchField">
+        <mat-label>Enter an address to search</mat-label>
+        <input matInput placeholder="1001 s center street" #inputAddress>
+        <mat-hint>Must include zip code</mat-hint>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onClickSearch(inputAddress)">SEARCH</button>
+    <agm-map fxLayout="column" fxLayoutAlign="center center" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+        <agm-marker *ngFor="let coordinate of searchResult; let i = index" [latitude]="coordinate.lat" [longitude]="coordinate.lng">
+            <agm-info-window>
+                {{coordinate.name}}
+            </agm-info-window>
+        </agm-marker>
+    </agm-map>
+</section>
