@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
     MaterialModule,
     FlexLayoutModule,
     HttpClientModule,
+    FormsModule,
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyC31fPvxdguqVUnokZKGqe_GSwhnIjv-go"
     })
