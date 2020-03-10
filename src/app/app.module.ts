@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { AgmCoreModule } from '@agm/core';
     MaterialModule,
     FlexLayoutModule,
     HttpClientModule,
+    FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyC31fPvxdguqVUnokZKGqe_GSwhnIjv-go'
     })

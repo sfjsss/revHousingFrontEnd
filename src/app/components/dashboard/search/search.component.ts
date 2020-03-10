@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CoordinateService } from 'src/app/services/coordinate.service';
+import { NgForm } from '@angular/forms';
+import { stringToKeyValue } from '@angular/flex-layout/extended/typings/style/style-transforms';
 
 @Component({
   selector: 'app-search',
@@ -28,13 +30,13 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClickSearch(addressInput: HTMLInputElement) {
-    console.log(addressInput.value);
-    this.retrieveCoordinates(addressInput.value);
+  onSubmit(form: NgForm) {
+    console.log(form);
+    this.retrieveCoordinates(form.form.value.address, form.form.value.zipcode);
   }
 
-  retrieveCoordinates(address: string) {
-    this.coordinateService.fetchCoordinates(address).subscribe(coordinates => {
+  retrieveCoordinates(address: string, zipcode: string) {
+    this.coordinateService.fetchCoordinates(address, zipcode).subscribe(coordinates => {
       this.lat = coordinates.results[0].geometry.location.lat;
       this.lng = coordinates.results[0].geometry.location.lng;
     });
