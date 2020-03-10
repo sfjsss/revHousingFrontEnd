@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';

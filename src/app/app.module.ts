@@ -10,12 +10,14 @@ import { MaterialModule } from './material.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SearchComponent } from './components/dashboard/search/search.component';
 import { AgmCoreModule } from '@agm/core';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    SearchComponent
+    SearchComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
