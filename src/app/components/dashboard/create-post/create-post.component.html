@@ -1,0 +1,38 @@
+<section class="create-post-container" fxLayout="column" fxLayoutAlign="center center">
+    <h1>Create a housing post</h1>
+    <form #f="ngForm" fxLayoutGap="10px" (ngSubmit)="onSubmit(f)" fxLayout="column" fxLayoutAlign="center center">
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input type="text" matInput ngModel name="title" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Daily Rent</mat-label>
+            <input type="number" matInput ngModel name="rent" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input type="text" matInput ngModel name="address" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>ZipCode</mat-label>
+            <input type="text" matInput ngModel name="zipcode" required minlength="5" maxlength="5">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <textarea matInput ngModel name="description"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Image Link</mat-label>
+            <input type="text" matInput ngModel name="image1Link">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Image Link</mat-label>
+            <input type="text" matInput ngModel name="image2Link">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Image Link</mat-label>
+            <input type="text" matInput ngModel name="image3Link">
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">SUBMIT</button>
+    </form>
+</section>
