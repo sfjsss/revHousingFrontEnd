@@ -13,13 +13,15 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SearchComponent } from './components/dashboard/search/search.component';
 import { AgmCoreModule } from '@agm/core';
 import { CreatePostComponent } from './components/dashboard/create-post/create-post.component';
+import { MyPostsComponent } from './components/dashboard/my-posts/my-posts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     SearchComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    MyPostsComponent
   ],
   imports: [
     BrowserModule,
