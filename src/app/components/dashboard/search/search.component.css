@@ -3,7 +3,15 @@ section {
 }
 
 .searchField {
-    width: 50vw;
+    width: 70vh;
+}
+
+.addressField {
+    width: 70%
+}
+
+.zipcodeField {
+    width: 20%;
 }
 
 agm-map {

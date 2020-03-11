@@ -9,9 +9,11 @@ export class CoordinateService {
 
   constructor(private http: HttpClient) { }
 
-  fetchCoordinates(address: string) {
+  fetchCoordinates(address: string, zipcode: string) {
     let splittedAddress = address.split(' ');
     let joinedAddress = splittedAddress.join('+');
-    return this.http.get<any>(`https://maps.googleapis.com/maps/api/geocode/json?address=${joinedAddress}&key=${this.apiKey}`)
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${joinedAddress}+${zipcode}&key=${this.apiKey}`;
+    console.log(url);
+    return this.http.get<any>(url);
   }
 }

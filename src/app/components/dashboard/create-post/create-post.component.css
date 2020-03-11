@@ -1,0 +1,11 @@
+.create-post-container {
+    padding-top: 10vh;
+}
+
+form {
+    width: 70vh;
+}
+
+mat-form-field {
+    width: 100%;
+}
