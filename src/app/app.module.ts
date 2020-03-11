@@ -12,7 +12,10 @@ import { MaterialModule } from './material.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SearchComponent } from './components/dashboard/search/search.component';
 import { AgmCoreModule } from '@agm/core';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 import { CreatePostComponent } from './components/dashboard/create-post/create-post.component';
+import { GoodbyeComponent } from './components/goodbye/goodbye.component';
 import { MyPostsComponent } from './components/dashboard/my-posts/my-posts.component';
 
 @NgModule({
@@ -20,6 +23,8 @@ import { MyPostsComponent } from './components/dashboard/my-posts/my-posts.compo
     AppComponent,
     DashboardComponent,
     SearchComponent,
+    WelcomeComponent,
+    GoodbyeComponent,
     CreatePostComponent,
     MyPostsComponent
   ],
@@ -33,10 +38,15 @@ import { MyPostsComponent } from './components/dashboard/my-posts/my-posts.compo
     FormsModule,
     RouterModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyC31fPvxdguqVUnokZKGqe_GSwhnIjv-go'
+      apiKey: "AIzaSyC31fPvxdguqVUnokZKGqe_GSwhnIjv-go"
     })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MAT_RADIO_DEFAULT_OPTIONS,
+      useValue: { color: "accent" }
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
