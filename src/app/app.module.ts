@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,13 +14,17 @@ import { SearchComponent } from './components/dashboard/search/search.component'
 import { AgmCoreModule } from '@agm/core';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
+import { CreatePostComponent } from './components/dashboard/create-post/create-post.component';
+import { GoodbyeComponent } from './components/goodbye/goodbye.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     SearchComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    GoodbyeComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +34,7 @@ import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
     FlexLayoutModule,
     HttpClientModule,
     FormsModule,
+    RouterModule,
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyC31fPvxdguqVUnokZKGqe_GSwhnIjv-go"
     })

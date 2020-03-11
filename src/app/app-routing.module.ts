@@ -4,13 +4,15 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SearchComponent } from './components/dashboard/search/search.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { GoodbyeComponent } from './components/goodbye/goodbye.component';
+import { CreatePostComponent } from './components/dashboard/create-post/create-post.component';
 
 const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
   { path: 'goodbye', component: GoodbyeComponent },
   {
     path: '', component: DashboardComponent, children: [
-      { path: '', component: SearchComponent }
+      { path: '', component: SearchComponent },
+      { path: 'create-post', component: CreatePostComponent }
     ]
   }
 ];
