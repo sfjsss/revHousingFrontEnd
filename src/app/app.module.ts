@@ -11,6 +11,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SearchComponent } from './components/dashboard/search/search.component';
 import { AgmCoreModule } from '@agm/core';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -27,10 +28,15 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     FlexLayoutModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyC31fPvxdguqVUnokZKGqe_GSwhnIjv-go'
+      apiKey: "AIzaSyC31fPvxdguqVUnokZKGqe_GSwhnIjv-go"
     })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MAT_RADIO_DEFAULT_OPTIONS,
+      useValue: { color: "accent" }
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

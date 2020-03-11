@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
+  public women = '../../../assets/images/women.jpg';
+  public logo = '../../../assets/images/logo.png';
+
   constructor() { }
 
   ngOnInit() {
