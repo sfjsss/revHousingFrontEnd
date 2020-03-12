@@ -1,11 +1,12 @@
 <mat-sidenav-container>
-    <mat-sidenav mode="side" opened>
-        <mat-nav-list>
+  <mat-sidenav mode="side" opened>
+    <img id="logo" src="{{logo}}" alt="logo">
+        <mat-nav-list id="nav-list">
             <a mat-list-item routerLink="/">
                 <mat-icon>explore</mat-icon>
                 <span>Search</span>
             </a>
-            <a mat-list-item>
+            <a mat-list-item routerLink="/profile">
                 <mat-icon>account_circle</mat-icon>
                 <span>Profile</span>
             </a>
