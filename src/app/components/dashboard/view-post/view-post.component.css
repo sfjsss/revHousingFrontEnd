@@ -1,0 +1,10 @@
+.view-post-container {
+    width: 50vw;
+    margin: 5vh auto;
+}
+
+agm-map {
+    height: 400px;
+    width: 50vw;
+    margin-top: 60px;
+}
