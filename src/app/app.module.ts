@@ -17,6 +17,7 @@ import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 import { CreatePostComponent } from './components/dashboard/create-post/create-post.component';
 import { GoodbyeComponent } from './components/goodbye/goodbye.component';
 import { MyPostsComponent } from './components/dashboard/my-posts/my-posts.component';
+import { ProfileComponent } from './components/dashboard/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MyPostsComponent } from './components/dashboard/my-posts/my-posts.compo
     WelcomeComponent,
     GoodbyeComponent,
     CreatePostComponent,
-    MyPostsComponent
+    MyPostsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

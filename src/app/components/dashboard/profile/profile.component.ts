@@ -1,0 +1,19 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: "app-profile",
+  templateUrl: "./profile.component.html",
+  styleUrls: ["./profile.component.css"]
+})
+export class ProfileComponent implements OnInit {
+
+  public avatar = "../../../assets/images/avatar.png";
+
+  constructor() {}
+
+  ngOnInit() {}
+
+  onSubmit(f){
+    console.log(f);
+  }
+}

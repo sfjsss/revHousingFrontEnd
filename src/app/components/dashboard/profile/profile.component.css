@@ -1,0 +1,27 @@
+mat-card{
+ margin: 6vh 15vw;
+ text-align: center
+}
+
+mat-card-title{
+  font-family: 'Sen', sans-serif;
+}
+
+mat-card-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#avatar{
+  width: 25vw;
+  height: 40vh;
+  margin: 10px 10px 10px 10px;
+}
+
+mat-card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
