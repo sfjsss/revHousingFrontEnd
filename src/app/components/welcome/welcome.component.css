@@ -3,7 +3,6 @@
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   position: fixed;
 }
@@ -89,7 +88,7 @@
 .footer{
   position: absolute;
   width: 15vw;
-  left: 42vw;
+  left: 40vw;
   top: 95vh;
   font-size: 1.5vw;
   font-family: 'Sen', sans-serif;
