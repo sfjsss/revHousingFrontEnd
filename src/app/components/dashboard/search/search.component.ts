@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoordinateService } from 'src/app/services/coordinate.service';
 import { NgForm } from '@angular/forms';
-import { stringToKeyValue } from '@angular/flex-layout/extended/typings/style/style-transforms';
 
 @Component({
   selector: 'app-search',

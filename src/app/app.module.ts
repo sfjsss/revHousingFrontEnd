@@ -18,6 +18,8 @@ import { CreatePostComponent } from './components/dashboard/create-post/create-p
 import { GoodbyeComponent } from './components/goodbye/goodbye.component';
 import { MyPostsComponent } from './components/dashboard/my-posts/my-posts.component';
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
+import { ViewPostComponent } from './components/dashboard/view-post/view-post.component';
+import { BookmarkedPostsComponent } from './components/dashboard/bookmarked-posts/bookmarked-posts.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ProfileComponent } from './components/dashboard/profile/profile.compone
     GoodbyeComponent,
     CreatePostComponent,
     MyPostsComponent,
-    ProfileComponent
+    ProfileComponent,
+    ViewPostComponent,
+    BookmarkedPostsComponent
   ],
   imports: [
     BrowserModule,
