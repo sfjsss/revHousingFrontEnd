@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ["./dashboard.component.css"]
 })
 export class DashboardComponent implements OnInit {
-  logo = '../../../assets/images/logo.png';
 
   public logo = "../../../assets/images/logo.png";
 
