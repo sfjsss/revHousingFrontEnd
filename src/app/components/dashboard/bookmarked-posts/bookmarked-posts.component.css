@@ -1,0 +1,15 @@
+h1 {
+    position: fixed;
+    top: 5vh;
+    left: 50vw;
+}
+
+.cards {
+    padding-left: 30px;
+    margin-top: 10vh;
+}
+
+mat-card {
+    margin-right: 30px;
+}
+
