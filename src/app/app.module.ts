@@ -22,6 +22,7 @@ import { ViewPostComponent } from './components/dashboard/view-post/view-post.co
 import { BookmarkedPostsComponent } from './components/dashboard/bookmarked-posts/bookmarked-posts.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { ListInterestedComponent } from './components/dashboard/my-posts/list-interested/list-interested.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LoginComponent } from './components/login/login.component';
     MyPostsComponent,
     ProfileComponent,
     ViewPostComponent,
-    BookmarkedPostsComponent
+    BookmarkedPostsComponent,
+    ListInterestedComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ import { LoginComponent } from './components/login/login.component';
       apiKey: "AIzaSyC31fPvxdguqVUnokZKGqe_GSwhnIjv-go"
     })
   ],
+  entryComponents: [ListInterestedComponent],
   providers: [
     {
       provide: MAT_RADIO_DEFAULT_OPTIONS,

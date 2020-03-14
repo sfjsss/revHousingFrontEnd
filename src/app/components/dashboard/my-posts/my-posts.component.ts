@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+
+import { ListInterestedComponent } from './list-interested/list-interested.component';
 
 @Component({
   selector: 'app-my-posts',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyPostsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  onClickInterestedList() {
+    const dialogRef = this.dialog.open(ListInterestedComponent, {
+      data: {
+        message: 'this is a test message'
+      }
+    });
   }
 
 }
