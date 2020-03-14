@@ -16,7 +16,7 @@ export class MyPostsComponent implements OnInit {
   }
 
   onClickInterestedList() {
-    const dialogRef = this.dialog.open(ListInterestedComponent, {
+    this.dialog.open(ListInterestedComponent, {
       data: {
         message: 'this is a test message'
       }
