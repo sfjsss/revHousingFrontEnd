@@ -51,7 +51,7 @@ import { ListInterestedComponent } from './components/dashboard/my-posts/list-in
     ReactiveFormsModule,
     RouterModule,
     AgmCoreModule.forRoot({
-      apiKey: "AIzaSyC31fPvxdguqVUnokZKGqe_GSwhnIjv-go"
+      apiKey: "AIzaSyDdU7KMs5IfYmqJXmYZc8MzL_8fN3z5Hec"
     })
   ],
   entryComponents: [ListInterestedComponent],
