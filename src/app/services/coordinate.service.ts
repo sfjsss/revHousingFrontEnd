@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CoordinateService {
-  private apiKey = 'AIzaSyC31fPvxdguqVUnokZKGqe_GSwhnIjv-go';
+  // private apiKey = 'AIzaSyC31fPvxdguqVUnokZKGqe_GSwhnIjv-go';
+  private apiKey = "AIzaSyDdU7KMs5IfYmqJXmYZc8MzL_8fN3z5Hec";
 
   constructor(private http: HttpClient) { }
 
