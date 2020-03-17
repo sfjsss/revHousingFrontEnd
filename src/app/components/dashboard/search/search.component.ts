@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
 export class SearchComponent implements OnInit {
   lat: number = 32.727344;
   lng: number = -97.105981;
-  zoom: number = 10;
+  zoom: number = 5;
   searchResult: any[] = [
     {
       name: 'UTA',

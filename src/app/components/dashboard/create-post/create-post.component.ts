@@ -33,7 +33,7 @@ export class CreatePostComponent implements OnInit {
       formData['latitude'] = response.results[0].geometry.location.lat;
       formData['longitude'] = response.results[0].geometry.location.lng;
       this.postsService.createPost(formData).subscribe(response => {
-        if (response != null) {
+        if (response.status == 201) {
           this.router.navigate(['my-posts']);
         }
       })
