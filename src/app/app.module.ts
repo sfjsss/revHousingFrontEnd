@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,8 @@ import { MyPostsComponent } from './components/dashboard/my-posts/my-posts.compo
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
 import { ViewPostComponent } from './components/dashboard/view-post/view-post.component';
 import { BookmarkedPostsComponent } from './components/dashboard/bookmarked-posts/bookmarked-posts.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { BookmarkedPostsComponent } from './components/dashboard/bookmarked-post
     SearchComponent,
     WelcomeComponent,
     GoodbyeComponent,
+    RegisterComponent,
+    LoginComponent,
     CreatePostComponent,
     MyPostsComponent,
     ProfileComponent,
@@ -42,6 +46,7 @@ import { BookmarkedPostsComponent } from './components/dashboard/bookmarked-post
     FlexLayoutModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyC31fPvxdguqVUnokZKGqe_GSwhnIjv-go"

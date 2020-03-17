@@ -1,0 +1,63 @@
+form {
+    width: 70vh;
+}
+
+* {
+    font-family: 'Sen', sans-serif;
+}
+
+mat-form-field {
+    width: 50%;
+}
+
+.logo {
+    position: absolute;
+    top: -10vh;
+    left: 10vw;
+    height: 45vh;
+    width: 28vw;
+  }
+.door {
+    position: absolute;
+    top: 18vh;
+    left: 11.5vw;
+    height: 75vh;
+    width: 26vw;
+}
+
+  .login-container {
+    background-color: #D7DA1F;
+    background: linear-gradient(0.25turn, rgb(29, 130, 170), #D7DA1F);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 0%;
+  }
+
+  #card {
+    width: 36.5%;
+    position: absolute;
+    top: 30vh;
+    left: 55vw;
+  }
+
+  #signup {
+    position: absolute;
+    top: 65vh;
+    left: 68vw; 
+  }
+
+  #button {
+    position: absolute;
+    top: 69vh;
+    left: 68.8vw; 
+  }
+
+  .footer{
+    position: absolute;
+    width: 15vw;
+    left: 45.5vw;
+    top: 95vh;
+    font-family: 'Sen', sans-serif;
+  }
+
