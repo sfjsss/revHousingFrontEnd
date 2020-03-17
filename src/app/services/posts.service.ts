@@ -11,4 +11,8 @@ export class PostsService {
   createPost(formData) {
     return this.http.post<any>('http://localhost:8080/posts', formData, {observe:'response'});
   }
+
+  getPostsByZipcode(zipcode) {
+    return this.http.get<any>(`http://localhost:8080/posts?zipcode=${zipcode}`, {responseType: 'json'});
+  }
 }
