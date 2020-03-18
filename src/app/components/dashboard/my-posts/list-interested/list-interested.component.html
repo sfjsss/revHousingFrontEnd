@@ -1,14 +1,8 @@
 <h1 mat-dialog-title>List of interested users</h1>
 <div mat-dialog-content>
-    <mat-list role="list">
-        <mat-list-item role="listitem">
-            <span><strong>Name: </strong> Alan Li <strong>Email: </strong> alan@l.com <strong>Phone: </strong> 6268237713</span>
-        </mat-list-item>
-        <mat-list-item role="listitem">
-            <span><strong>Name: </strong> Alan Li <strong>Email: </strong> alan@l.com <strong>Phone: </strong> 6268237713</span>
-        </mat-list-item>
-        <mat-list-item role="listitem">
-            <span><strong>Name: </strong> Alan Li <strong>Email: </strong> alan@l.com <strong>Phone: </strong> 6268237713</span>
+    <mat-list role="list" *ngFor="let post of posts">
+        <mat-list-item role="listitem" *ngFor="let customer of post.interestedCustomers">
+            <span><strong>Name:</strong> {{customer.first_name}} <strong>Email: </strong> {{customer.email}} <strong>Phone: </strong> {{customer.phone}} </span>
         </mat-list-item>
     </mat-list>
 </div>
