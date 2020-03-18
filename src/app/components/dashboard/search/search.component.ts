@@ -14,14 +14,18 @@ export class SearchComponent implements OnInit {
   zoom: number = 15;
   searchResult: any[] = [
     {
-      name: 'UTA',
-      lat: 32.731195,
-      lng: -97.112073
+      post_id: 1,
+      title: 'UTA',
+      rent: 500,
+      latitude: 32.731195,
+      longitude: -97.112073
     },
     {
-      name: 'Carter Junior High',
-      lat: 32.724404,
-      lng: -97.100474
+      post_id: 2,
+      title: 'Carter Junior High',
+      rent: 1000,
+      latitude: 32.724404,
+      longitude: -97.100474
     }
   ];
 
@@ -31,10 +35,9 @@ export class SearchComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form);
     this.retrieveCoordinates(form.form.value.address, form.form.value.zipcode);
     this.postsService.getPostsByZipcode(form.form.value.zipcode).subscribe(response => {
-      console.log(response);
+      this.searchResult = response;
     })
   }
 
