@@ -22,7 +22,7 @@ const routes: Routes = [
       { path: '', component: SearchComponent },
       { path: 'create-post', component: CreatePostComponent },
       { path: 'my-posts', component: MyPostsComponent },
-      { path: 'view-post', component: ViewPostComponent },
+      { path: 'view-post/:id', component: ViewPostComponent },
       { path: "profile", component: ProfileComponent },
       { path: 'bookmarked-posts', component: BookmarkedPostsComponent }
     ]
