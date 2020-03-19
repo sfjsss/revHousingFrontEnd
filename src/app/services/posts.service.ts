@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Post } from '../classes/Post';
 
 
 @Injectable({
@@ -19,8 +17,35 @@ export class PostsService {
     return this.http.get<any>(`http://localhost:8080/posts?zipcode=${zipcode}`, {responseType: 'json'});
   }
 
-  getAllPosts(): Observable<Post[]> {
-    return this.http.get<any>(`http://localhost:8080/posts`, {responseType: 'json'});
+  getPostById(id) {
+    return this.http.get<any>(`http://localhost:8080/posts/${id}`, {responseType: 'json'});
   }
 
+  bookMarkPost(postId) {
+    return this.http.get<any>(`http://localhost:8080/posts/bookmark?userId=3&postId=${postId}`);
+  }
+
+  unBookMarkPost(postId) {
+    return this.http.get<any>(`http://localhost:8080/posts/unbookmark?userId=3&postId=${postId}`);
+  }
+
+  getPostsByUserId() {
+    return this.http.get<any>(`http://localhost:8080/posts/user/2`, { responseType: 'json' });
+  }
+
+  deletePostById(postId) {
+    return this.http.delete<any>(`http://localhost:8080/posts/${postId}`);
+  }
+
+  updatePost(formData) {
+    return this.http.put<any>('http://localhost:8080/posts', formData, { observe: 'response' });
+  }
+
+  interestPost(postId) {
+    return this.http.get<any>(`http://localhost:8080/posts/interest?userId=3&postId=${postId}`, { responseType: 'json' });
+  }
+
+  unInterestPost(postId) {
+    return this.http.get<any>(`http://localhost:8080/posts/uninterest?userId=3&postId=${postId}`, { responseType: 'json' });
+  }
 }

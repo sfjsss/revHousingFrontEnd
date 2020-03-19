@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { ListInterestedComponent } from './list-interested/list-interested.component';
 import { PostsService } from 'src/app/services/posts.service';
-import { Post } from 'src/app/classes/Post';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-posts',
@@ -11,30 +11,40 @@ import { Post } from 'src/app/classes/Post';
 })
 
 export class MyPostsComponent implements OnInit {
+  myPosts = [];
 
-  posts: Post[];
-  filteredPosts: Post[];
-
-  constructor(private postsService: PostsService, private dialog: MatDialog) {
-  }
+  constructor(private dialog: MatDialog, private postsService: PostsService, private router: Router) { }
 
   ngOnInit(): void {
-    this.getposts();
-  }
-
-  getposts() {
-    this.postsService.getAllPosts().subscribe( post => {
-      this.posts = post;
+    this.postsService.getPostsByUserId().subscribe(response => {
+      this.myPosts = response;
     });
   }
 
-  onClickInterestedList(id: number) {
-    const dialogConfig = new MatDialogConfig();
-    this.filteredPosts = this.posts.filter( post => {
-        return post.post_id === id;
+  onClickInterestedList(i) {
+    this.dialog.open(ListInterestedComponent, {
+      data: {
+        listOfInterestedUsers: this.myPosts[i].interestedCustomers
+      }
     });
-    dialogConfig.data = this.filteredPosts;
-    this.dialog.open(ListInterestedComponent, dialogConfig);
+  }
+
+  onClickCard(i) {
+    console.log(i);
+    const post_id = this.myPosts[i].post_id;
+    this.router.navigate([`/view-post/${post_id}`]);
+  }
+
+  onClickRemove(i) {
+    const post_id = this.myPosts[i].post_id;
+    this.postsService.deletePostById(post_id).subscribe(response => {
+      this.router.navigate([`/my-posts`]);
+    })
+  }
+
+  onClickEdit(i) {
+    const post_id = this.myPosts[i].post_id;
+    this.router.navigate([`/edit-post/${post_id}`]);
   }
 
 }

@@ -1,0 +1,38 @@
+<section class="create-post-container" fxLayout="column" fxLayoutAlign="center center">
+    <h1>Edit a housing post</h1>
+    <form #f="ngForm" fxLayoutGap="10px" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="center center">
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input type="text" matInput ngModel name="title" required [(ngModel)]="currentPost.title">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Daily Rent</mat-label>
+            <input type="number" matInput ngModel name="rent" required [(ngModel)]="currentPost.rent">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input type="text" matInput ngModel name="address" required [(ngModel)]="currentPost.address">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>ZipCode</mat-label>
+            <input type="text" matInput ngModel name="zipcode" required minlength="5" maxlength="5" [(ngModel)]="currentPost.zipcode">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <textarea matInput ngModel name="description" [(ngModel)]="currentPost.description"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Image Link</mat-label>
+            <input type="text" matInput ngModel name="image1Link" [(ngModel)]="currentPost.image_link_one">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Image Link</mat-label>
+            <input type="text" matInput ngModel name="image2Link" [(ngModel)]="currentPost.image_link_two">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Image Link</mat-label>
+            <input type="text" matInput ngModel name="image3Link" [(ngModel)]="currentPost.image_link_three">
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">SUBMIT</button>
+    </form>
+</section>

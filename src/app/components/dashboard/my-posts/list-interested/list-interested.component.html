@@ -1,8 +1,8 @@
 <h1 mat-dialog-title>List of interested users</h1>
 <div mat-dialog-content>
-    <mat-list role="list" *ngFor="let post of posts">
-        <mat-list-item role="listitem" *ngFor="let customer of post.interestedCustomers">
-            <span><strong>Name:</strong> {{customer.first_name}} <strong>Email: </strong> {{customer.email}} <strong>Phone: </strong> {{customer.phone}} </span>
+    <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let user of passedData.listOfInterestedUsers">
+            <span><strong>Name: </strong> {{ user.first_name }} {{ user.last_name }} <strong>Email: </strong> {{ user.email }} <strong>Phone: </strong> {{ user.phone }} </span>
         </mat-list-item>
     </mat-list>
 </div>
