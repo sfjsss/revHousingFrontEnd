@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { UsersService } from 'src/app/services/users.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: "app-profile",
@@ -6,14 +8,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ["./profile.component.css"]
 })
 export class ProfileComponent implements OnInit {
+  @ViewChild('f') profileForm;
 
   public avatar = "../../../assets/images/avatar.png";
+  currentUser = {
+    customer_id: 0,
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone: "",
+    pass: ""
+  };
+  originalPass;
 
-  constructor() {}
+  constructor(private usersService: UsersService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.usersService.getUserById().subscribe(response => {
+      this.currentUser = response;
+      this.originalPass = response.pass;
+      this.currentUser.pass = "";
+    })
+  }
 
-  onSubmit(f){
-    console.log(f);
+  onSubmit(){
+    if (this.currentUser.pass == "") {
+      this.currentUser.pass = this.originalPass;
+    }
+    this.usersService.updateUser(this.currentUser).subscribe(response => {
+      console.log(response);
+    })
   }
 }
