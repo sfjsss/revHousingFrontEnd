@@ -23,4 +23,8 @@ export class PostsService {
   bookMarkPost(postId) {
     return this.http.get<any>(`http://localhost:8080/posts/bookmark?userId=3&postId=${postId}`);
   }
+
+  unBookMarkPost(postId) {
+    return this.http.get<any>(`http://localhost:8080/posts/unbookmark?userId=3&postId=${postId}`);
+  }
 }

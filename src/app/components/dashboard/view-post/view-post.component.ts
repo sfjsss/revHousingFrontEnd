@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostsService } from 'src/app/services/posts.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common'; 
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-view-post',
@@ -10,6 +11,7 @@ import { Location } from '@angular/common';
 })
 export class ViewPostComponent implements OnInit {
   zoom: number = 15;
+  bookmarked = true;
   
   currentPost = {
     post_id: 0,
@@ -27,11 +29,10 @@ export class ViewPostComponent implements OnInit {
     }
   };
 
-  constructor(private postsService: PostsService, private route: ActivatedRoute, private location: Location, private router: Router) { }
+  constructor(private usersService: UsersService, private postsService: PostsService, private route: ActivatedRoute, private location: Location, private router: Router) { }
 
   ngOnInit(): void {
     this.postsService.getPostById(this.route.snapshot.params['id']).subscribe(response => {
-      console.log(response);
       this.currentPost = response;
       this.currentPost.images = [];
       if (this.currentPost['image_link_one'] != "") {
@@ -52,8 +53,15 @@ export class ViewPostComponent implements OnInit {
           url: this.currentPost['image_link_three']
         })
       };
-      console.log(this.currentPost);
-    })
+
+      this.usersService.getUserById().subscribe(response => {
+        for (let post of response.bookmarkedPosts) {
+          if (post.post_id == this.currentPost.post_id) {
+            this.bookmarked = false;
+          }
+        }
+      })
+    });
   }
 
   returnToLastPage() {
@@ -62,9 +70,14 @@ export class ViewPostComponent implements OnInit {
 
   onClickBookMark() {
     this.postsService.bookMarkPost(this.currentPost.post_id).subscribe(response => {
-      console.log(response);
+      this.router.navigate(['/bookmarked-posts']);
     });
-    this.router.navigate(['/bookmarked-posts']);
+  }
+
+  onClickUnBookMark() {
+    this.postsService.unBookMarkPost(this.currentPost.post_id).subscribe(response => {
+      this.router.navigate(['/bookmarked-posts']);
+    })
   }
 
 }

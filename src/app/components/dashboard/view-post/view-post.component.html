@@ -24,7 +24,8 @@
         <div fxLayoutAlign="space-between">
             <div *ngIf="currentPost.creator.customer_id != 3">
                 <button mat-button color="primary">INTERESTED</button>
-                <button mat-button color="primary" (click)="onClickBookMark()">BOOKMARK</button>
+                <button *ngIf="bookmarked" mat-button color="primary" (click)="onClickBookMark()">BOOKMARK</button>
+                <button *ngIf="!bookmarked" mat-button color="primary" (click)="onClickUnBookMark()">UNBOOKMARK</button>
             </div>
             <button mat-button color="warn" (click)="returnToLastPage()">RETURN</button>
         </div>
