@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: "app-dashboard",
@@ -9,7 +11,12 @@ export class DashboardComponent implements OnInit {
 
   public logo = "../../../assets/images/logo.png";
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+  onClickLogout() {
+    sessionStorage.removeItem("userId");
+    this.router.navigate(['/welcome']);
+  }
 }
