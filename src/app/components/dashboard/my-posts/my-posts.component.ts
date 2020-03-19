@@ -35,4 +35,11 @@ export class MyPostsComponent implements OnInit {
     this.router.navigate([`/view-post/${post_id}`]);
   }
 
+  onClickRemove(i) {
+    const post_id = this.myPosts[i].post_id;
+    this.postsService.deletePostById(post_id).subscribe(response => {
+      this.router.navigate([`/my-posts`]);
+    })
+  }
+
 }

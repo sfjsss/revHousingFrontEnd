@@ -31,4 +31,8 @@ export class PostsService {
   getPostsByUserId() {
     return this.http.get<any>(`http://localhost:8080/posts/user/3`, { responseType: 'json' });
   }
+
+  deletePostById(postId) {
+    return this.http.delete<any>(`http://localhost:8080/posts/${postId}`);
+  }
 }
