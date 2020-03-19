@@ -23,6 +23,8 @@ import { BookmarkedPostsComponent } from './components/dashboard/bookmarked-post
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { ListInterestedComponent } from './components/dashboard/my-posts/list-interested/list-interested.component';
+import { ConfirmProfileUpdateComponent } from './components/dashboard/profile/confirm-profile-update/confirm-profile-update.component';
+import { EditPostComponent } from './components/dashboard/edit-post/edit-post.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { ListInterestedComponent } from './components/dashboard/my-posts/list-in
     ProfileComponent,
     ViewPostComponent,
     BookmarkedPostsComponent,
-    ListInterestedComponent
+    ListInterestedComponent,
+    ConfirmProfileUpdateComponent,
+    EditPostComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,7 @@ import { ListInterestedComponent } from './components/dashboard/my-posts/list-in
       apiKey: "AIzaSyDdU7KMs5IfYmqJXmYZc8MzL_8fN3z5Hec"
     })
   ],
-  entryComponents: [ListInterestedComponent],
+  entryComponents: [ListInterestedComponent, ConfirmProfileUpdateComponent],
   providers: [
     {
       provide: MAT_RADIO_DEFAULT_OPTIONS,

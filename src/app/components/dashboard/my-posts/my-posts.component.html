@@ -1,55 +1,21 @@
 <section class="my-posts-container" fxLayoutGap="30px" fxLayout="column" fxLayoutAlign="center start">
     <h1>My Posts</h1>
     <div class="cards">
-        <mat-card fxFlex="40vw">
+        <mat-card fxFlex="40vw" *ngFor="let post of myPosts; let i = index">
             <mat-card-header>
-                <mat-card-title>Test</mat-card-title>
+                <mat-card-title>{{ post.title }}</mat-card-title>
             </mat-card-header>
-            <img mat-card-image src="https://techcrunch.com/wp-content/uploads/2019/03/blueground-apartment-2-2-2.jpg?w=1390&crop=1">
+            <img mat-card-image [src]="post.image_link_one" (click)="onClickCard(i)">
             <mat-card-content>
-                <p><strong>Daily rent: 100</strong></p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio reiciendis inventore dolorem quaerat, fuga consequuntur rerum quo dignissimos maiores quas, blanditiis dolor cupiditate. Soluta sint debitis amet recusandae, ipsum expedita.</p>
+                <p><strong>Daily rent: $ {{ post.rent }}</strong></p>
+                <p>{{ post.description }}</p>
             </mat-card-content>
             <mat-card-actions fxLayoutAlign="space-between">
                 <div>
-                    <button mat-button color="primary" (click)="onClickInterestedList()">SEE WHO IS INTERESTED</button>
-                    <button mat-button color="primary">EDIT</button>
+                    <button mat-raised-button color="primary" (click)="onClickInterestedList(i)">SEE WHO IS INTERESTED</button>
+                    <button mat-raised-button color="primary" (click)="onClickEdit(i)">EDIT</button>
                 </div>
-                <button mat-button color="warn">REMOVE</button>
-            </mat-card-actions>
-        </mat-card>
-        <mat-card fxFlex="40vw">
-            <mat-card-header>
-                <mat-card-title>Test</mat-card-title>
-            </mat-card-header>
-            <img mat-card-image src="https://techcrunch.com/wp-content/uploads/2019/03/blueground-apartment-2-2-2.jpg?w=1390&crop=1">
-            <mat-card-content>
-                <p><strong>Daily rent: 100</strong></p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio reiciendis inventore dolorem quaerat, fuga consequuntur rerum quo dignissimos maiores quas, blanditiis dolor cupiditate. Soluta sint debitis amet recusandae, ipsum expedita.</p>
-            </mat-card-content>
-            <mat-card-actions fxLayoutAlign="space-between">
-                <div>
-                    <button mat-button color="primary">SEE WHO IS INTERESTED</button>
-                    <button mat-button color="primary">EDIT</button>
-                </div>
-                <button mat-button color="warn">REMOVE</button>
-            </mat-card-actions>
-        </mat-card>
-        <mat-card fxFlex="40vw">
-            <mat-card-header>
-                <mat-card-title>Test</mat-card-title>
-            </mat-card-header>
-            <img mat-card-image src="https://techcrunch.com/wp-content/uploads/2019/03/blueground-apartment-2-2-2.jpg?w=1390&crop=1">
-            <mat-card-content>
-                <p><strong>Daily rent: 100</strong></p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio reiciendis inventore dolorem quaerat, fuga consequuntur rerum quo dignissimos maiores quas, blanditiis dolor cupiditate. Soluta sint debitis amet recusandae, ipsum expedita.</p>
-            </mat-card-content>
-            <mat-card-actions fxLayoutAlign="space-between">
-                <div>
-                    <button mat-button color="primary">SEE WHO IS INTERESTED</button>
-                    <button mat-button color="primary">EDIT</button>
-                </div>
-                <button mat-button color="warn">REMOVE</button>
+                <button mat-raised-button color="warn" (click)="onClickRemove(i)">REMOVE</button>
             </mat-card-actions>
         </mat-card>
     </div>

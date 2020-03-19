@@ -11,6 +11,6 @@ export class ListInterestedComponent {
 
     onClickClose() {
         this.dialogRef.close();
-    }
+    } 
 }
 
