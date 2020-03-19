@@ -19,7 +19,7 @@ export class MyPostsComponent implements OnInit {
     this.dialog.open(ListInterestedComponent, {
       data: {
         message: 'this is a test message'
-      }
+      } 
     });
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
-import { NgForm } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmProfileUpdateComponent } from './confirm-profile-update/confirm-profile-update.component';
 
 @Component({
   selector: "app-profile",
@@ -21,7 +22,7 @@ export class ProfileComponent implements OnInit {
   };
   originalPass;
 
-  constructor(private usersService: UsersService) {}
+  constructor(private usersService: UsersService, private dialog: MatDialog) {}
 
   ngOnInit() {
     this.usersService.getUserById().subscribe(response => {
@@ -38,5 +39,6 @@ export class ProfileComponent implements OnInit {
     this.usersService.updateUser(this.currentUser).subscribe(response => {
       console.log(response);
     })
+    this.dialog.open(ConfirmProfileUpdateComponent);
   }
 }
