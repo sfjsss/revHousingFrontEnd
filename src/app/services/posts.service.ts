@@ -27,4 +27,8 @@ export class PostsService {
   unBookMarkPost(postId) {
     return this.http.get<any>(`http://localhost:8080/posts/unbookmark?userId=3&postId=${postId}`);
   }
+
+  getPostsByUserId() {
+    return this.http.get<any>(`http://localhost:8080/posts/user/3`, { responseType: 'json' });
+  }
 }
