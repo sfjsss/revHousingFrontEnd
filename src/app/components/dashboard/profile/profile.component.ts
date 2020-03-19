@@ -29,7 +29,7 @@ export class ProfileComponent implements OnInit {
       this.currentUser = response;
       this.originalPass = response.pass;
       this.currentUser.pass = "";
-    })
+    }) 
   }
 
   onSubmit(){

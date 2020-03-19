@@ -42,4 +42,9 @@ export class MyPostsComponent implements OnInit {
     })
   }
 
+  onClickEdit(i) {
+    const post_id = this.myPosts[i].post_id;
+    this.router.navigate([`/edit-post/${post_id}`]);
+  }
+
 }

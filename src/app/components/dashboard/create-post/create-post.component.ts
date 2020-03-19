@@ -35,7 +35,7 @@ export class CreatePostComponent implements OnInit {
       this.postsService.createPost(formData).subscribe(response => {
         if (response.status == 201) {
           this.router.navigate(['my-posts']);
-        }
+        } 
       })
     });
   }

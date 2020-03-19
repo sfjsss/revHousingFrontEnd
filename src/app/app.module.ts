@@ -24,6 +24,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { ListInterestedComponent } from './components/dashboard/my-posts/list-interested/list-interested.component';
 import { ConfirmProfileUpdateComponent } from './components/dashboard/profile/confirm-profile-update/confirm-profile-update.component';
+import { EditPostComponent } from './components/dashboard/edit-post/edit-post.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ConfirmProfileUpdateComponent } from './components/dashboard/profile/co
     ViewPostComponent,
     BookmarkedPostsComponent,
     ListInterestedComponent,
-    ConfirmProfileUpdateComponent
+    ConfirmProfileUpdateComponent,
+    EditPostComponent
   ],
   imports: [
     BrowserModule,

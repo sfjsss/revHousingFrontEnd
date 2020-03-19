@@ -35,4 +35,8 @@ export class PostsService {
   deletePostById(postId) {
     return this.http.delete<any>(`http://localhost:8080/posts/${postId}`);
   }
+
+  updatePost(formData) {
+    return this.http.put<any>("http://localhost:8080/posts", formData, { observe: 'response' });
+  }
 }

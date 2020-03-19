@@ -11,7 +11,7 @@ import { PostsService } from 'src/app/services/posts.service';
 export class SearchComponent implements OnInit {
   lat: number = 32.727344;
   lng: number = -97.105981;
-  zoom: number = 15;
+  zoom: number = 12;
   searchResult: any[] = [];
 
   constructor(private coordinateService: CoordinateService, private postsService: PostsService) { }
