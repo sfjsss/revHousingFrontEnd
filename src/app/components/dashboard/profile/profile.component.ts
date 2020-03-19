@@ -38,7 +38,8 @@ export class ProfileComponent implements OnInit {
     }
     this.usersService.updateUser(this.currentUser).subscribe(response => {
       console.log(response);
-    })
+    });
+    this.currentUser.pass = "";
     this.dialog.open(ConfirmProfileUpdateComponent);
   }
 }

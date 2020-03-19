@@ -29,7 +29,7 @@ export class PostsService {
   }
 
   getPostsByUserId() {
-    return this.http.get<any>(`http://localhost:8080/posts/user/3`, { responseType: 'json' });
+    return this.http.get<any>(`http://localhost:8080/posts/user/2`, { responseType: 'json' });
   }
 
   deletePostById(postId) {
@@ -38,5 +38,13 @@ export class PostsService {
 
   updatePost(formData) {
     return this.http.put<any>("http://localhost:8080/posts", formData, { observe: 'response' });
+  }
+
+  interestPost(postId) {
+    return this.http.get<any>(`http://localhost:8080/posts/interest?userId=3&postId=${postId}`, { responseType: 'json' });
+  }
+
+  unInterestPost(postId) {
+    return this.http.get<any>(`http://localhost:8080/posts/uninterest?userId=3&postId=${postId}`, { responseType: 'json' });
   }
 }

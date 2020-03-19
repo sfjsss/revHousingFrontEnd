@@ -21,10 +21,10 @@ export class MyPostsComponent implements OnInit {
     })
   }
 
-  onClickInterestedList() {
+  onClickInterestedList(i) {
     this.dialog.open(ListInterestedComponent, {
       data: {
-        message: 'this is a test message'
+        listOfInterestedUsers: this.myPosts[i].interestedCustomers
       } 
     });
   }

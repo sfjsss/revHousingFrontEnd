@@ -22,12 +22,15 @@
         <p><strong>Daily rent: $ {{ currentPost.rent }}</strong></p>
         <p>{{ currentPost.description }}</p>
         <div fxLayoutAlign="space-between">
-            <div *ngIf="currentPost.creator.customer_id != 3">
-                <button mat-button color="primary">INTERESTED</button>
-                <button *ngIf="bookmarked" mat-button color="primary" (click)="onClickBookMark()">BOOKMARK</button>
-                <button *ngIf="!bookmarked" mat-button color="primary" (click)="onClickUnBookMark()">UNBOOKMARK</button>
+            <div *ngIf="currentPost.creator.customer_id != 3" fxLayoutGap="10px">
+                <button *ngIf="!interested" mat-raised-button color="primary" (click)="onClickInterest()">SHOW INTEREST</button>
+                <button *ngIf="interested" mat-button color="primary" (click)="onClickUnInterest()">WITHDRAW INTEREST</button>
+                <div fxFlex *ngIf="!interested">
+                    <button *ngIf="!bookmarked" mat-raised-button color="primary" (click)="onClickBookMark()">BOOKMARK</button>
+                    <button *ngIf="bookmarked" mat-button color="primary" (click)="onClickUnBookMark()">UNBOOKMARK</button>
+                </div>
             </div>
-            <button mat-button color="warn" (click)="returnToLastPage()">RETURN</button>
+            <button mat-raised-button color="warn" (click)="returnToLastPage()">RETURN</button>
         </div>
     </div>
 </section>
