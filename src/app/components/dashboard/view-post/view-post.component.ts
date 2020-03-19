@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PostsService } from 'src/app/services/posts.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common'; 
 
 @Component({
   selector: 'app-view-post',
@@ -6,27 +9,62 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-post.component.css']
 })
 export class ViewPostComponent implements OnInit {
-  lat: number = 32.727344;
-  lng: number = -97.105981;
-  zoom: number = 10;
-  images: any[] = [
-    {
-      className: ['carousel-item', 'active'],
-      url: "https://techcrunch.com/wp-content/uploads/2019/03/blueground-apartment-2-2-2.jpg?w=1390&crop=1"
-    },
-    {
-      className: ['carousel-item'],
-      url: "https://techcrunch.com/wp-content/uploads/2019/03/blueground-apartment-2-2-2.jpg?w=1390&crop=1"
-    },
-    {
-      className: ['carousel-item'],
-      url: "https://techcrunch.com/wp-content/uploads/2019/03/blueground-apartment-2-2-2.jpg?w=1390&crop=1"
+  zoom: number = 15;
+  
+  currentPost = {
+    post_id: 0,
+    title: "",
+    rent: "",
+    description: "",
+    image_link_one: "",
+    image_link_two: "",
+    image_link_three: "",
+    latitude: 32.727344,
+    longitude: -97.105981,
+    images: [],
+    creator: {
+      customer_id : 0
     }
-  ];
+  };
 
-  constructor() { }
+  constructor(private postsService: PostsService, private route: ActivatedRoute, private location: Location, private router: Router) { }
 
   ngOnInit(): void {
+    this.postsService.getPostById(this.route.snapshot.params['id']).subscribe(response => {
+      console.log(response);
+      this.currentPost = response;
+      this.currentPost.images = [];
+      if (this.currentPost['image_link_one'] != "") {
+        this.currentPost.images.push({
+          className: ['carousel-item', 'active'],
+          url: this.currentPost['image_link_one']
+        })
+      };
+      if (this.currentPost['image_link_two'] != "") {
+        this.currentPost.images.push({
+          className: ['carousel-item'],
+          url: this.currentPost['image_link_two']
+        })
+      };
+      if (this.currentPost['image_link_three'] != "") {
+        this.currentPost.images.push({
+          className: ['carousel-item'],
+          url: this.currentPost['image_link_three']
+        })
+      };
+      console.log(this.currentPost);
+    })
+  }
+
+  returnToLastPage() {
+    this.location.back();
+  }
+
+  onClickBookMark() {
+    this.postsService.bookMarkPost(this.currentPost.post_id).subscribe(response => {
+      console.log(response);
+    });
+    this.router.navigate(['/bookmarked-posts']);
   }
 
 }

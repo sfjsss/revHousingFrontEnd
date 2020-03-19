@@ -2,7 +2,7 @@
     <div class="colContainer">
         <div id="imagesCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div *ngFor="let image of images" [ngClass]="image.className">
+                <div *ngFor="let image of currentPost.images" [ngClass]="image.className">
                     <img [src]="image.url" class="d-block w-100">
                 </div>
             </div>
@@ -13,24 +13,20 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
             </a>
         </div>
-        <agm-map fxLayout="column" fxLayoutAlign="center center" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+        <agm-map fxLayout="column" fxLayoutAlign="center center" [latitude]="currentPost.latitude" [longitude]="currentPost.longitude" [zoom]="zoom">
+            <agm-marker [latitude]="currentPost.latitude" [longitude]="currentPost.longitude"></agm-marker>
         </agm-map>
     </div>
     <div class="colContainer" fxLayout="column" fxLayoutGap="20px">
-        <h1>Title</h1>
-        <p><strong>Daily rent: 100</strong></p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, praesentium, voluptatum ipsam tempora quod doloribus quisquam numquam impedit ducimus voluptatibus omnis harum consectetur pariatur repellendus excepturi atque nam asperiores enim.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, praesentium, voluptatum ipsam tempora quod doloribus quisquam numquam impedit ducimus voluptatibus omnis harum consectetur pariatur repellendus excepturi atque nam asperiores enim.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, praesentium, voluptatum ipsam tempora quod doloribus quisquam numquam impedit ducimus voluptatibus omnis harum consectetur pariatur repellendus excepturi atque nam asperiores enim.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, praesentium, voluptatum ipsam tempora quod doloribus quisquam numquam impedit ducimus voluptatibus omnis harum consectetur pariatur repellendus excepturi atque nam asperiores enim.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, praesentium, voluptatum ipsam tempora quod doloribus quisquam numquam impedit ducimus voluptatibus omnis harum consectetur pariatur repellendus excepturi atque nam asperiores enim.</p>
+        <h1>{{ currentPost.title }}</h1>
+        <p><strong>Daily rent: $ {{ currentPost.rent }}</strong></p>
+        <p>{{ currentPost.description }}</p>
         <div fxLayoutAlign="space-between">
-            <div>
+            <div *ngIf="currentPost.creator.customer_id != 3">
                 <button mat-button color="primary">INTERESTED</button>
-                <button mat-button color="primary">BOOKMARK</button>
+                <button mat-button color="primary" (click)="onClickBookMark()">BOOKMARK</button>
             </div>
-            <button mat-button color="warn">RETURN</button>
+            <button mat-button color="warn" (click)="returnToLastPage()">RETURN</button>
         </div>
     </div>
 </section>
