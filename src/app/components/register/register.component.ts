@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   
   selectFormControl = new FormControl('', Validators.required);
-  public logo = '../../../assets/images/logo.png';
+  public logo = '../../../assets/images/logo.png'; 
 
   constructor(private authService: AuthService, private matSnackBar: MatSnackBar, private router: Router) { }
 

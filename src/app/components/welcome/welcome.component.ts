@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-welcome',
@@ -10,7 +11,7 @@ export class WelcomeComponent implements OnInit {
   public women = '../../../assets/images/women.jpg';
   public logo = '../../../assets/images/logo.png';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }

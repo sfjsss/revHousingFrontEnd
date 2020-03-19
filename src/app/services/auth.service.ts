@@ -9,6 +9,10 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   registerUser(formData) {
-    return this.http.post<any>("http://localhost:8080/users", formData, { observe: 'response' });
+    return this.http.post<any>("http://localhost:8080/register", formData, { observe: 'response' });
+  }
+
+  loginUser(formData) {
+    return this.http.post<any>("http://localhost:8080/login", formData, { observe: 'response' });
   }
 }
