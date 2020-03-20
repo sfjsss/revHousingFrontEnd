@@ -13,6 +13,6 @@ export class AuthService {
   }
 
   loginUser(formData) {
-    return this.http.post<any>("http://localhost:8080/login", formData, { observe: 'response' });
+    return this.http.post<any>("http://34.215.140.199:8090/revHousing/login", formData, { observe: 'response' });
   }
 }
