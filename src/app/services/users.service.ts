@@ -13,12 +13,17 @@ export class UsersService {
   createuser(formData) {
     return this.http.post<any>('http://localhost:8080/users', formData, { observe: 'response' });
   }
+
   getUserById() {
     return this.http.get<any>(`http://localhost:8080/users/3`, { responseType: 'json' });
   }
 
   updateUser(formData) {
     return this.http.put<any>("http://localhost:8080/users", formData, { observe: 'response' });
+  }
+  
+  loginUser(formData) {
+    return this.http.post<any>('http://localhost:8080/login', formData, { observe: 'response' });
   }
 
 }

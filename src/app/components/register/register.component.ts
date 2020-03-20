@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import { NgForm } from '@angular/forms';
+import { UsersService } from'src/app/services/users.service';
 
 interface Gender {
   value: string;
@@ -13,13 +14,14 @@ interface Gender {
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  
 
   selectedValue: string;
 
   selectFormControl = new FormControl('', Validators.required);
   public logo = '../../../assets/images/logo.png';
 
-  constructor() { }
+  constructor(private userService : UsersService) { }
 
   ngOnInit(): void {
   }
@@ -33,14 +35,17 @@ export class RegisterComponent implements OnInit {
   onSubmit(form: NgForm) {
     const formValue = form.form.value;
     const formData = {
-      firstname: formValue.first_name,
-      lastname: formValue.last_name,
+      first_name: formValue.first_name,
+      last_name: formValue.last_name,
       email: formValue.email,
       phone: formValue.phone,
-      password: formValue.pass,
+      pass: formValue.pass,
       gender: formValue.gender
     };
     console.log(formData);
+    this.userService.createuser(formData).subscribe(response => {
+      console.log(response);
+    })
   }
 
 }

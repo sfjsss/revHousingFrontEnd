@@ -20,7 +20,7 @@
         </mat-form-field>
         <mat-form-field>
             <mat-label>Password</mat-label>
-            <input type="text" matInput ngModel name="pass" required>
+            <input type="password" matInput ngModel name="pass" required>
         </mat-form-field>
         </div>
         <div fxLayout="row">
@@ -34,7 +34,7 @@
                 <mat-option *ngFor="let gender of genders" [value]="gender.value">
                   {{gender.viewValue}}
                 </mat-option>
-              </mat-select>        
+              </mat-select>
         </mat-form-field>
         </div>
         <mat-form-field>
@@ -43,7 +43,7 @@
                 <option value="rent">Rent</option>
                 <option value="post">Post</option>
                 </select>
-        </mat-form-field> 
+        </mat-form-field>
         <mat-form-field>
             <mat-label>How you heard about Revhousing?</mat-label>
             <select matNativeControl>
@@ -52,10 +52,10 @@
                 <option value="revature">Revature</option>
                 <option value="none">N/A</option>
                 </select>
-        </mat-form-field> 
-        <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Sign up!</button>
+        </mat-form-field>
+        <button routerLink="/login" type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Sign up!</button>
     </form>
 </mat-card>
-        <button id= "loginbutton" routerLink="/login" mat-raised-button color="warn">Login</button>
+        <button routerLink="/login" id= "loginbutton" routerLink="/login" mat-raised-button color="warn">Login</button>
         <footer class="footer">&copy; Revahousing2020</footer>
 </section>

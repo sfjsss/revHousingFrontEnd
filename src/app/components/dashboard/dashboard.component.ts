@@ -12,4 +12,9 @@ export class DashboardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  logout (): void{
+    window.localStorage.clear();
+  }
+
 }
