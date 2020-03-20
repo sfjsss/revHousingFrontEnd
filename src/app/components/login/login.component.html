@@ -10,7 +10,11 @@
         </mat-form-field>
         <mat-form-field>
             <mat-label>Password</mat-label>
+<<<<<<< HEAD
             <input type="text" matInput ngModel name="pass" required>
+=======
+            <input type="password" matInput ngModel name="password" required>
+>>>>>>> ad14f54e813e5b41570b802a7f47776715f44f44
         </mat-form-field>
         <button type="submit" mat-raised-button color="danger" [disabled]="f.invalid">Sign In</button>
     </form>
@@ -19,7 +23,7 @@
     <h4>Don't have an Account yet?</h4>
     </div>
     <div id="button">
-    <button type="submit" mat-raised-button color="primary">Create an Account</button>
+    <button routerLink="/register" mat-raised-button color="primary">Create an Account</button>
     </div>
     <footer class="footer">&copy; Revahousing2020</footer>
 </section>
