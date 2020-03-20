@@ -13,20 +13,22 @@ export class ViewPostComponent implements OnInit {
   zoom: number = 15;
   bookmarked = false;
   interested = false;
+  loaded = false;
+  userId = sessionStorage.getItem("userId");
   
   currentPost = {
-    post_id: 0,
+    post_id: "",
     title: "",
     rent: "",
     description: "",
     image_link_one: "",
     image_link_two: "",
     image_link_three: "",
-    latitude: 32.727344,
-    longitude: -97.105981, 
+    latitude: 0,
+    longitude: 0, 
     images: [],
     creator: {
-      customer_id : 0
+      customer_id : ""
     },
     interestedCustomers: []
   };
@@ -69,7 +71,12 @@ export class ViewPostComponent implements OnInit {
 
   renderPage() {
     this.postsService.getPostById(this.route.snapshot.params['id']).subscribe(response => {
-      this.currentPost = response;
+      this.currentPost = {
+        ...response,
+        latitude: Number(response.latitude),
+        longitude: Number(response.longitude)
+      };
+      this.loaded = true;
       this.currentPost.images = [];
       if (this.currentPost['image_link_one'] != "") {
         this.currentPost.images.push({
@@ -90,18 +97,20 @@ export class ViewPostComponent implements OnInit {
         })
       };
       for (let user of this.currentPost.interestedCustomers) {
-        if (user.customer_id == 3) {
+        if (user.customer_id == this.userId) {
           this.interested = true;
         }
       }
 
       this.usersService.getUserById().subscribe(response => {
+        console.log(response);
         for (let post of response.bookmarkedPosts) {
           if (post.post_id == this.currentPost.post_id) {
             this.bookmarked = true;
           }
         }
       })
+      console.log(this.currentPost);
     });
   }
 
