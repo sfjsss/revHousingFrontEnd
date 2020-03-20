@@ -9,7 +9,7 @@ export class UsersService {
   constructor(private http: HttpClient) { }
 
   getUserById() {
-    return this.http.get<any>(`http://localhost:8080/users/3`, { responseType: 'json' });
+    return this.http.get<any>(`http://localhost:8080/users/${sessionStorage.getItem("userId")}`, { responseType: 'json' });
   }
 
   updateUser(formData) {

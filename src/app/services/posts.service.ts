@@ -21,15 +21,15 @@ export class PostsService {
   }
 
   bookMarkPost(postId) {
-    return this.http.get<any>(`http://localhost:8080/posts/bookmark?userId=3&postId=${postId}`);
+    return this.http.get<any>(`http://localhost:8080/posts/bookmark?userId=${sessionStorage.getItem("userId")}&postId=${postId}`);
   }
 
   unBookMarkPost(postId) {
-    return this.http.get<any>(`http://localhost:8080/posts/unbookmark?userId=3&postId=${postId}`);
+    return this.http.get<any>(`http://localhost:8080/posts/unbookmark?userId=${sessionStorage.getItem("userId")}&postId=${postId}`);
   }
 
   getPostsByUserId() {
-    return this.http.get<any>(`http://localhost:8080/posts/user/2`, { responseType: 'json' });
+    return this.http.get<any>(`http://localhost:8080/posts/user/${sessionStorage.getItem("userId")}`, { responseType: 'json' });
   }
 
   deletePostById(postId) {
@@ -41,10 +41,10 @@ export class PostsService {
   }
 
   interestPost(postId) {
-    return this.http.get<any>(`http://localhost:8080/posts/interest?userId=3&postId=${postId}`, { responseType: 'json' });
+    return this.http.get<any>(`http://localhost:8080/posts/interest?userId=${sessionStorage.getItem("userId")}&postId=${postId}`, { responseType: 'json' });
   }
 
   unInterestPost(postId) {
-    return this.http.get<any>(`http://localhost:8080/posts/uninterest?userId=3&postId=${postId}`, { responseType: 'json' });
+    return this.http.get<any>(`http://localhost:8080/posts/uninterest?userId=${sessionStorage.getItem("userId")}&postId=${postId}`, { responseType: 'json' });
   }
 }
