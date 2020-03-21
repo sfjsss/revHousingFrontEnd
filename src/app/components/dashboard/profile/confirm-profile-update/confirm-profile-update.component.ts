@@ -11,7 +11,7 @@ export class ConfirmProfileUpdateComponent implements OnInit {
   constructor(private dialogRef: MatDialogRef<ConfirmProfileUpdateComponent>) { }
 
   ngOnInit(): void {
-  } 
+  }
 
   onClickClose() {
     this.dialogRef.close();

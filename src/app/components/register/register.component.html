@@ -1,9 +1,9 @@
 <section class="register-container" fxLayout="column" fxLayoutAlign="center center">
     <img class="logo" src="{{ logo }}" alt="logo">
-    <mat-card style="text-align: center;">
-    <h1>Sign Up for your free Revahousing account!</h1>
+    <mat-card style="text-align: center; width: 37vw; height: 60vh; font-size: 1.8vh; box-shadow: 5px 10px rgb(29, 130, 170);">
+    <h1 style="font-size: 3vh;">Sign Up for your free Revahousing account!</h1>
     <form class="mat-form-field--inline" #f="ngForm" fxLayoutGap="10px" (ngSubmit)="onSubmit(f)" fxLayout="column" fxLayoutAlign="center center">
-        <div fxLayout="row">
+        <div style="width: 30vw;" fxLayout="row">
         <mat-form-field>
             <mat-label>Firstname</mat-label>
             <input type="text" matInput ngModel name="firstName" required>
@@ -13,7 +13,7 @@
             <input type="text" matInput ngModel name="lastName" required>
         </mat-form-field>
         </div>
-        <div fxLayout="row">
+        <div style="width: 30vw;" fxLayout="row">
         <mat-form-field>
             <mat-label>Email</mat-label>
             <input type="text" matInput ngModel name="email" required>
@@ -23,7 +23,7 @@
             <input type="password" matInput ngModel name="password" required>
         </mat-form-field>
         </div>
-        <div fxLayout="row">
+        <div style="width: 30vw;" fxLayout="row">
         <mat-form-field>
             <mat-label>Phone</mat-label>
             <input type="text" matInput ngModel name="phone" required>
@@ -40,14 +40,14 @@
             </mat-error>
         </mat-form-field>
         </div>
-        <mat-form-field>
+        <mat-form-field style="width: 30vw;">
             <mat-label>Were you interested in Renting or Posting?</mat-label>
             <select matNativeControl>
                 <option value="rent">Rent</option>
                 <option value="post">Post</option>
                 </select>
-        </mat-form-field> 
-        <mat-form-field>
+        </mat-form-field>
+        <mat-form-field style="width: 30vw;">
             <mat-label>How you heard about Revhousing?</mat-label>
             <select matNativeControl>
                 <option value="social">Social Media</option>
@@ -55,8 +55,8 @@
                 <option value="revature">Revature</option>
                 <option value="none">N/A</option>
                 </select>
-        </mat-form-field> 
-        <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Sign up!</button>
+        </mat-form-field>
+        <button style="font-size: 1.5vh; height: 5vh; width: 5vw; color: white; background-color: rgb(29, 130, 170);" type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Sign up!</button>
     </form>
 </mat-card>
         <button id= "loginbutton" routerLink="/login" mat-raised-button color="warn">Login</button>

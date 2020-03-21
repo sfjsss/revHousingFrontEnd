@@ -43,12 +43,14 @@ mat-form-field {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    background-color: rgb(29, 130, 170);
   }
 
   .footer{
     position: absolute;
     width: 15vw;
-    left: 45.5vw;
+    left: 43vw;
     top: 95vh;
     font-family: 'Sen', sans-serif;
+    font-size: 1.5vw;
   }

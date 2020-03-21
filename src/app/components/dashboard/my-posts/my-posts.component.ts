@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-
 import { ListInterestedComponent } from './list-interested/list-interested.component';
 import { PostsService } from 'src/app/services/posts.service';
 import { Router } from '@angular/router';
@@ -10,6 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './my-posts.component.html',
   styleUrls: ['./my-posts.component.css']
 })
+
 export class MyPostsComponent implements OnInit {
   myPosts = [];
 
@@ -23,7 +23,7 @@ export class MyPostsComponent implements OnInit {
     this.dialog.open(ListInterestedComponent, {
       data: {
         listOfInterestedUsers: this.myPosts[i].interestedCustomers
-      } 
+      }
     });
   }
 
