@@ -16,9 +16,7 @@ export class MyPostsComponent implements OnInit {
   constructor(private dialog: MatDialog, private postsService: PostsService, private router: Router) { }
 
   ngOnInit(): void {
-    this.postsService.getPostsByUserId().subscribe(response => {
-      this.myPosts = response;
-    });
+    this.renderPage();
   }
 
   onClickInterestedList(i) {
@@ -38,13 +36,19 @@ export class MyPostsComponent implements OnInit {
   onClickRemove(i) {
     const post_id = this.myPosts[i].post_id;
     this.postsService.deletePostById(post_id).subscribe(response => {
-      this.router.navigate([`/my-posts`]);
+      this.renderPage();
     })
   }
 
   onClickEdit(i) {
     const post_id = this.myPosts[i].post_id;
     this.router.navigate([`/edit-post/${post_id}`]);
+  }
+
+  renderPage() {
+    this.postsService.getPostsByUserId().subscribe(response => {
+      this.myPosts = response;
+    })
   }
 
 }

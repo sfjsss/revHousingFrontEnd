@@ -27,7 +27,10 @@ export class CreatePostComponent implements OnInit {
       description: formValue.description,
       image_link_one: formValue.image1Link,
       image_link_two: formValue.image2Link,
-      image_link_three: formValue.image3Link
+      image_link_three: formValue.image3Link,
+      creator: {
+        customer_id: sessionStorage.getItem("userId")
+      }
     };
     this.coordinateService.fetchCoordinates(formData.address, formData.zipcode).subscribe(response => {
       formData['latitude'] = response.results[0].geometry.location.lat;

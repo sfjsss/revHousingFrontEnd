@@ -12,6 +12,7 @@ import { ProfileComponent } from './components/dashboard/profile/profile.compone
 import { ViewPostComponent } from './components/dashboard/view-post/view-post.component';
 import { BookmarkedPostsComponent } from './components/dashboard/bookmarked-posts/bookmarked-posts.component';
 import { EditPostComponent } from './components/dashboard/edit-post/edit-post.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: "welcome", component: WelcomeComponent },
@@ -27,7 +28,7 @@ const routes: Routes = [
       { path: 'view-post/:id', component: ViewPostComponent },
       { path: "profile", component: ProfileComponent },
       { path: 'bookmarked-posts', component: BookmarkedPostsComponent }
-    ]
+    ], canActivate: [AuthGuard]
   }
 ];
 

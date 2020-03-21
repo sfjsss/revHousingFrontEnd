@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
@@ -25,6 +25,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ListInterestedComponent } from './components/dashboard/my-posts/list-interested/list-interested.component';
 import { ConfirmProfileUpdateComponent } from './components/dashboard/profile/confirm-profile-update/confirm-profile-update.component';
 import { EditPostComponent } from './components/dashboard/edit-post/edit-post.component';
+import { AuthInterceptorService } from './auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,11 @@ import { EditPostComponent } from './components/dashboard/edit-post/edit-post.co
     {
       provide: MAT_RADIO_DEFAULT_OPTIONS,
       useValue: { color: "accent" }
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
     }
   ],
   bootstrap: [AppComponent]

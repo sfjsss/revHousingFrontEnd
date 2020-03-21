@@ -13,7 +13,7 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
             </a>
         </div>
-        <agm-map fxLayout="column" fxLayoutAlign="center center" [latitude]="currentPost.latitude" [longitude]="currentPost.longitude" [zoom]="zoom">
+        <agm-map *ngIf="loaded" fxLayout="column" fxLayoutAlign="center center" [latitude]="currentPost.latitude" [longitude]="currentPost.longitude" [zoom]="zoom">
             <agm-marker [latitude]="currentPost.latitude" [longitude]="currentPost.longitude"></agm-marker>
         </agm-map>
     </div>
@@ -22,7 +22,7 @@
         <p><strong>Daily rent: $ {{ currentPost.rent }}</strong></p>
         <p>{{ currentPost.description }}</p>
         <div fxLayoutAlign="space-between">
-            <div *ngIf="currentPost.creator.customer_id != 3" fxLayoutGap="10px">
+            <div *ngIf="currentPost.creator.customer_id != userId" fxLayoutGap="10px">
                 <button *ngIf="!interested" mat-raised-button color="primary" (click)="onClickInterest()">SHOW INTEREST</button>
                 <button *ngIf="interested" mat-button color="primary" (click)="onClickUnInterest()">WITHDRAW INTEREST</button>
                 <div fxFlex *ngIf="!interested">
