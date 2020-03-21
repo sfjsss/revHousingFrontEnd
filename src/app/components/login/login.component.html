@@ -1,0 +1,25 @@
+<section class="login-container" fxLayout="column" fxLayoutAlign="center center">
+    <img class="logo" src="{{ logo }}" alt="logo">
+    <img class="door" src="{{ door }}" alt="door">
+ <mat-card id= "card" style="text-align: center;">
+    <h3>Login to Revahousing</h3>
+    <form #f="ngForm" fxLayoutGap="20px" (ngSubmit)="onSubmit(f)" fxLayout="column" fxLayoutAlign="center center">
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input type="text" matInput ngModel name="email" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input type="password" matInput ngModel name="password" required>
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="danger" [disabled]="f.invalid">Sign In</button>
+    </form>
+ </mat-card>
+    <div id="signup">
+    <h4>Don't have an Account yet?</h4>
+    </div>
+    <div id="button">
+    <button routerLink="/register" mat-raised-button color="primary">Create an Account</button>
+    </div>
+    <footer class="footer">&copy; Revahousing2020</footer>
+</section>

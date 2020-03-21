@@ -1,0 +1,44 @@
+<div class="body">
+  <mat-card fxFlex="50vw">
+    <mat-card-header>
+      <mat-card-title>PROFILE</mat-card-title>
+    </mat-card-header>
+    <img id="avatar"
+      src="{{avatar}}">
+    <mat-card-content>
+      <form #f="ngForm" fxLayoutGap="10px" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="center center">
+        <mat-form-field>
+          <mat-label>Firstname</mat-label>
+          <input type="text" matInput ngModel name="firstname" [(ngModel)]="currentUser.first_name" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Lastname</mat-label>
+          <input type="text" matInput ngModel name="lastname" [(ngModel)]="currentUser.last_name" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input type="email" matInput ngModel name="email" [(ngModel)]="currentUser.email" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Phone</mat-label>
+          <input type="tel" matInput ngModel name="phone" [(ngModel)]="currentUser.phone" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input type="password" matInput ngModel name="password" [(ngModel)]="currentUser.pass">
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">UPDATE</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+
+
+
+
+
+
+
+
+</div>
+

@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>List of interested users</h1>
+<div mat-dialog-content>
+    <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let user of passedData.listOfInterestedUsers">
+            <span><strong>Name: </strong> {{ user.first_name }} {{ user.last_name }} <strong>Email: </strong> {{ user.email }} <strong>Phone: </strong> {{ user.phone }} </span>
+        </mat-list-item>
+    </mat-list>
+</div>
+<div mat-dialog-actions fxLayoutAlign="end" style="paddingBottom: 20px">
+    <button mat-button color="primary" (click)="onClickClose()">CLOSE</button>
+</div>

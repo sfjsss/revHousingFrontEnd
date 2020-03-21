@@ -1,0 +1,9 @@
+.colContainer {
+    width: 30vw;
+}
+
+agm-map {
+    height: 300px;
+    width: 30vw;
+    margin-top: 60px;
+}

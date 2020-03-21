@@ -1,0 +1,64 @@
+<section class="register-container" fxLayout="column" fxLayoutAlign="center center">
+    <img class="logo" src="{{ logo }}" alt="logo">
+    <mat-card style="text-align: center;">
+    <h1>Sign Up for your free Revahousing account!</h1>
+    <form class="mat-form-field--inline" #f="ngForm" fxLayoutGap="10px" (ngSubmit)="onSubmit(f)" fxLayout="column" fxLayoutAlign="center center">
+        <div fxLayout="row">
+        <mat-form-field>
+            <mat-label>Firstname</mat-label>
+            <input type="text" matInput ngModel name="firstName" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Lastname</mat-label>
+            <input type="text" matInput ngModel name="lastName" required>
+        </mat-form-field>
+        </div>
+        <div fxLayout="row">
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input type="text" matInput ngModel name="email" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input type="password" matInput ngModel name="password" required>
+        </mat-form-field>
+        </div>
+        <div fxLayout="row">
+        <mat-form-field>
+            <mat-label>Phone</mat-label>
+            <input type="text" matInput ngModel name="phone" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Gender</mat-label>
+            <select matNativeControl required ngModel name="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            <mat-error *ngIf="selectFormControl.hasError('required')">
+              This field is required
+            </mat-error>
+        </mat-form-field>
+        </div>
+        <mat-form-field>
+            <mat-label>Were you interested in Renting or Posting?</mat-label>
+            <select matNativeControl>
+                <option value="rent">Rent</option>
+                <option value="post">Post</option>
+                </select>
+        </mat-form-field> 
+        <mat-form-field>
+            <mat-label>How you heard about Revhousing?</mat-label>
+            <select matNativeControl>
+                <option value="social">Social Media</option>
+                <option value="friend">Recommended by a Friend</option>
+                <option value="revature">Revature</option>
+                <option value="none">N/A</option>
+                </select>
+        </mat-form-field> 
+        <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Sign up!</button>
+    </form>
+</mat-card>
+        <button id= "loginbutton" routerLink="/login" mat-raised-button color="warn">Login</button>
+        <footer class="footer">&copy; Revahousing2020</footer>
+</section>

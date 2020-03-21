@@ -1,0 +1,34 @@
+/* .body {
+  background-color: #D7DA1F;
+} */
+
+#logo{
+  margin-top: -20px;
+  height: 25vh;
+  width: 18vw;
+}
+
+#nav-list{
+  margin-top: 10px;
+}
+
+mat-sidenav-container{
+  height: 100%;
+}
+
+mat-sidenav {
+    height: 100%;
+    background-color: #E0EA0B;
+    width: 20vw;
+}
+
+mat-icon {
+    margin-left: 2vw;
+    color: #0A567B;
+}
+
+span {
+  font-family: 'Sen', sans-serif;
+  font-size: 2vw;
+  color:white;
+}
