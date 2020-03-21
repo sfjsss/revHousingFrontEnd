@@ -1,0 +1,1 @@
+export const backendUrl = "http://34.215.140.199:8090/revHousing";
