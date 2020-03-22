@@ -13,7 +13,7 @@
         </div>
         <button style="color: white; background-color: #0A567B;" [disabled]="f.invalid" mat-raised-button color="primary" type="submit">SEARCH</button>
     </form>
-    <agm-map fxLayout="column" fxLayoutAlign="center center" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+    <agm-map style="width: 50vw; box-shadow: 5px 10px #E0EA0B;" fxLayout="column" fxLayoutAlign="center center" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
         <agm-marker *ngFor="let coordinate of searchResult; let i = index" [latitude]="coordinate.latitude" [longitude]="coordinate.longitude">
             <agm-info-window>
                 <a [routerLink]="'/view-post/' + coordinate.post_id">{{ coordinate.title }}</a>

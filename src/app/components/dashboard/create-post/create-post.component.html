@@ -1,11 +1,11 @@
 <section class="create-post-container" fxLayout="column" fxLayoutAlign="center center">
     <h1 style="font-family: 'Sen', sans-serif; font-size: 2vw;">Create a housing post</h1>
     <form #f="ngForm" fxLayoutGap="10px" (ngSubmit)="onSubmit(f)" fxLayout="column" fxLayoutAlign="center center">
-        <mat-form-field>
+        <mat-form-field >
             <mat-label>Title</mat-label>
             <input type="text" matInput ngModel name="title" required>
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field >
             <mat-label>Daily Rent</mat-label>
             <input type="number" matInput ngModel name="rent" required>
         </mat-form-field>

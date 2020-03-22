@@ -1,12 +1,12 @@
 <div class="body">
-  <mat-card fxFlex="50vw">
+  <mat-card style="box-shadow: 5px 10px #E0EA0B;" fxFlex="50vw">
     <mat-card-header>
       <mat-card-title>PROFILE</mat-card-title>
     </mat-card-header>
     <img id="avatar"
       src="{{avatar}}">
     <mat-card-content>
-      <form #f="ngForm" fxLayoutGap="10px" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="center center">
+      <form style="font-family: 'Sen', sans-serif;" #f="ngForm" fxLayoutGap="10px" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="center center">
         <mat-form-field>
           <mat-label>Firstname</mat-label>
           <input type="text" matInput ngModel name="firstname" [(ngModel)]="currentUser.first_name" required>

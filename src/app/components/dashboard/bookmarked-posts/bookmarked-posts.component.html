@@ -1,7 +1,7 @@
 <section class="my-posts-container" fxLayoutGap="30px" fxLayout="column" fxLayoutAlign="center start">
     <h1 style="font-family: 'Sen', sans-serif; font-size: 2vw;">Bookmarked Posts</h1>
     <div class="cards">
-        <mat-card fxFlex="40vw" *ngFor="let post of bookmarkedPosts; let i = index">
+        <mat-card style="font-family: 'Sen', sans-serif; box-shadow: 5px 10px #E0EA0B;" fxFlex="40vw" *ngFor="let post of bookmarkedPosts; let i = index">
             <mat-card-header>
                 <mat-card-title>{{ post.title }}</mat-card-title>
             </mat-card-header>
@@ -11,7 +11,7 @@
                 <p>{{ post.description }}</p>
             </mat-card-content>
             <mat-card-actions fxLayoutAlign="space-between">
-                <button mat-raised-button color="primary" (click)="onClickInterest(i)">SHOW INTEREST</button>
+                <button style="background-color: #0A567B;" mat-raised-button color="primary" (click)="onClickInterest(i)">SHOW INTEREST</button>
                 <button mat-button color="warn" (click)="onClickUnBookMark(i)">UNBOOKMARK</button>
             </mat-card-actions>
         </mat-card>

@@ -17,16 +17,16 @@
             <agm-marker [latitude]="currentPost.latitude" [longitude]="currentPost.longitude"></agm-marker>
         </agm-map>
     </div>
-    <div class="colContainer" fxLayout="column" fxLayoutGap="20px">
+    <div style="font-family: 'Sen', sans-serif; " class="colContainer" fxLayout="column" fxLayoutGap="20px">
         <h1>{{ currentPost.title }}</h1>
         <p><strong>Daily rent: $ {{ currentPost.rent }}</strong></p>
         <p>{{ currentPost.description }}</p>
         <div fxLayoutAlign="space-between">
             <div *ngIf="currentPost.creator.customer_id != userId" fxLayoutGap="10px">
-                <button *ngIf="!interested" mat-raised-button color="primary" (click)="onClickInterest()">SHOW INTEREST</button>
-                <button *ngIf="interested" mat-button color="primary" (click)="onClickUnInterest()">WITHDRAW INTEREST</button>
+                <button style="background-color: #0A567B;" *ngIf="!interested" mat-raised-button color="primary" (click)="onClickInterest()">SHOW INTEREST</button>
+                <button style="background-color: #0A567B;" *ngIf="interested" mat-button color="primary" (click)="onClickUnInterest()">WITHDRAW INTEREST</button>
                 <div fxFlex *ngIf="!interested">
-                    <button *ngIf="!bookmarked" mat-raised-button color="primary" (click)="onClickBookMark()">BOOKMARK</button>
+                    <button style="background-color: #0A567B;" *ngIf="!bookmarked" mat-raised-button color="primary" (click)="onClickBookMark()">BOOKMARK</button>
                     <button *ngIf="bookmarked" mat-button color="primary" (click)="onClickUnBookMark()">UNBOOKMARK</button>
                 </div>
             </div>
