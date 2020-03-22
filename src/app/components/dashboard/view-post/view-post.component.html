@@ -24,7 +24,7 @@
         <div fxLayoutAlign="space-between">
             <div *ngIf="currentPost.creator.customer_id != userId" fxLayoutGap="10px">
                 <button style="background-color: #0A567B;" *ngIf="!interested" mat-raised-button color="primary" (click)="onClickInterest()">SHOW INTEREST</button>
-                <button style="background-color: #0A567B;" *ngIf="interested" mat-button color="primary" (click)="onClickUnInterest()">WITHDRAW INTEREST</button>
+                <button *ngIf="interested" mat-button color="primary" (click)="onClickUnInterest()">WITHDRAW INTEREST</button>
                 <div fxFlex *ngIf="!interested">
                     <button style="background-color: #0A567B;" *ngIf="!bookmarked" mat-raised-button color="primary" (click)="onClickBookMark()">BOOKMARK</button>
                     <button *ngIf="bookmarked" mat-button color="primary" (click)="onClickUnBookMark()">UNBOOKMARK</button>
