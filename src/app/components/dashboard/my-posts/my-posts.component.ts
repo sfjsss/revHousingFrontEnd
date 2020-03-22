@@ -48,7 +48,7 @@ export class MyPostsComponent implements OnInit {
   renderPage() {
     this.postsService.getPostsByUserId().subscribe(response => {
       this.myPosts = response;
-    })
+    });
   }
 
 }

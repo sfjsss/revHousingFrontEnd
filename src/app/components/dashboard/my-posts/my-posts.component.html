@@ -1,7 +1,7 @@
 <section class="my-posts-container" fxLayoutGap="30px" fxLayout="column" fxLayoutAlign="center start">
     <h1 style="font-family: 'Sen', sans-serif; font-size: 2vw;">My Posts</h1>
     <div class="cards">
-        <mat-card fxFlex="40vw" *ngFor="let post of myPosts; let i = index">
+        <mat-card style="box-shadow: 5px 10px #E0EA0B;" fxFlex="40vw" *ngFor="let post of myPosts; let i = index">
             <mat-card-header>
                 <mat-card-title>{{ post.title }}</mat-card-title>
             </mat-card-header>
@@ -12,8 +12,8 @@
             </mat-card-content>
             <mat-card-actions fxLayoutAlign="space-between">
                 <div>
-                    <button mat-raised-button color="primary" (click)="onClickInterestedList(i)">SEE WHO IS INTERESTED</button>
-                    <button mat-raised-button color="primary" (click)="onClickEdit(i)">EDIT</button>
+                    <button style="background-color: #0A567B;" mat-raised-button color="primary" (click)="onClickInterestedList(i)">SEE WHO IS INTERESTED</button>
+                    <button style="background-color: #0A567B;" mat-raised-button color="primary" (click)="onClickEdit(i)">EDIT</button>
                 </div>
                 <button mat-raised-button color="warn" (click)="onClickRemove(i)">REMOVE</button>
             </mat-card-actions>

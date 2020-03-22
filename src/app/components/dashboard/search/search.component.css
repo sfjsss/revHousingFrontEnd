@@ -1,17 +1,16 @@
-.searchField {
-    width: 70vh;
-}
 
 .searchField {
     width: 70vh;
 }
 
 .addressField {
-    width: 70%
+    width: 70%;
+    font-family: 'Sen', sans-serif;
 }
 
 .zipcodeField {
     width: 20%;
+    font-family: 'Sen', sans-serif;
 }
 
 agm-map {
